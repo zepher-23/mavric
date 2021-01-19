@@ -1,0 +1,25 @@
+.blogmain{
+  display: block;
+  margin-top:250px ;
+  text-align: center;
+  
+}
+
+.blogmain h1{
+  display: block;
+  margin-top: 0%;
+  font-size: 8vw;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.445);
+  text-transform: capitalize;
+  animation-name: blog;
+  animation-duration:2s;
+}
+@keyframes blog{
+  0%{opacity: 0;transform: translateY(-30px);}
+  100%{opacity: 1;transform: translateY(0);}
+}
+.fa-wrench{
+  padding:70px;
+  transform: scale(1.5);
+}

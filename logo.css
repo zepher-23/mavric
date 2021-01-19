@@ -1,0 +1,31 @@
+
+	.NormalCharacterStyle
+{
+	display: inline-block;
+	font-family : "raleway";
+	font-size : 30px;
+	color : #FFAB74;
+	color : rgb(255, 171, 116);
+}
+.image
+{
+	display: inline-block;
+	width:90px;
+	height:auto;
+	margin-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: #FFAB74;
+	image : url("image.png");
+	background-repeat : no-repeat;
+}
+.st0
+{
+	display:inline-block;
+	height:50px;
+	margin-top: 1px;
+	border-style : Solid;
+	border-color : #757575;
+	border-color : rgba(117, 117, 117, 1);
+	border-width : 0.5px;
+}

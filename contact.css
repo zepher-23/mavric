@@ -1,0 +1,163 @@
+/*\\\\\\\\\\\\\\\\\\\\\\\\\contact form/////////////////////////////*/
+/* Full-width input fields */
+body{
+    box-sizing: border-box;
+    background-color: black;
+}
+input[type=text],textarea[type=text], input[type=password] {
+    width:100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: #e4e4e4;
+  }
+.formname, p{
+text-align: center;
+margin-bottom:10px;
+margin-top:10px;
+padding:0;
+    color:#292929;
+  }
+  /* Add a background color when the inputs get focus */
+  input[type=text]:focus, textarea[type=text]:focus,input[type=password]:focus {
+    background-color: rgb(252, 252, 252);
+    outline: none;
+    box-shadow: rgb(white);
+
+  }
+  label{
+      color:rgb(129, 129, 129);
+  }
+  /* Set a style for all buttons */
+  button {
+    background-color: #48E5C2;
+    color: rgb(29,29,29);
+    padding: 14px 20px;
+    margin: 8px 0;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    align-items: center;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  
+  
+  /* Float cancel and signup buttons and add an equal width */
+   .signupbtn {
+  margin-left:25%;
+    width: 50%;
+  }
+  
+  /* Add padding to container elements */
+  .contain {
+   
+    display:block;
+    padding: 1px;
+    transition:0.5s ease-in-out;
+   
+    z-index: 1;
+     border-radius:10px;
+  }
+  
+  /* The Modal (background) */
+  .contactform {
+   display: block;
+    width:65vh;
+    margin-top: 10px;
+   text-align: left;
+    border-radius:10px;
+    align-items: center;
+    display:inline-block;
+   
+   
+  }
+  .centerpos{
+    display: block;
+    
+    text-align: center;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+
+   
+    margin:5px;
+     /* 5% from the top, 15% from the bottom and centered */
+     border-radius:;
+     /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 0.5px solid #48E5C2;
+    margin-bottom: 25px;
+  }
+   
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .bg-img {
+    /* The image used */
+    margin-top:80px;
+    background-image: url("img2.jpg");
+  
+    min-height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .footer2{
+position: relative;  
+top:0px;
+  width:100%;
+    height:100px;
+   z-index: -1;
+    text-align: center;
+    font-family: "raleway";
+    background-color:#292929;
+    color: rgb(150,150,150);
+    font-size: 20px;
+    
+    padding-top:50px;
+    text-transform: uppercase;
+  }
+  .terms{
+    color:white;
+  }
+  
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+  }
