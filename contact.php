@@ -1,22 +1,24 @@
 <?php
-if(!empty($_POST["send"])) {
-	$name = $_POST["userName"];
-	$email = $_POST["userEmail"];
-	$subject = $_POST["subject"];
-	$content = $_POST["content"];
+if(!empty($_REQUEST['name'])) {
+	$name = $_REQUEST["name"];
+	$email = $_REQUEST["email"];
+	$phone = $_REQUEST["phone"];
+	$subject = $name . " registered";
+	$content = $_REQUEST["description"];
 	
 	$message = "<table>";
 	$message.= "<tr><td>Name : " . $name . "</td></tr>";
 	$message.= "<tr><td>Email : " . $email . "</td></tr>";
+	$message.= "<tr><td>Phone : " . $phone . "</td></tr>";
 	$message.= "<tr><td>content : " . $content . "</td></tr>";
 	$message.= "</table>";
 
 	$conn = mysqli_connect("127.0.0.1", "birdpaus_root", "test123","birdpaus_contact") or die ("Connection Error: " . mysqli_connect_error());
-	mysqli_query($conn, "INSERT INTO tblcontact (user_name, user_email,subject,content) VALUES ('" . $name. "', '" . $email. "','" . $subject. "','" . $content. "')");
+	mysqli_query($conn, "INSERT INTO tblcontact (user_name, user_email,phone,subject,content) VALUES ('" . $name. "', '" . $email. "', '" . $phone. "','" . $subject. "','" . $content. "')");
 	$insert_id = mysqli_insert_id($conn);
 
- $headers = "From: Rahul VS<rahul@birdpause.com>\r\n";
- $headers.= "Reply-To: rahul@birdpause.com\r\n"; 
+ $headers = "From: Bird Pause<contact@birdpause.com>\r\n";
+ $headers.= "Reply-To: Bird Pause<contact@birdpause.com\r\n"; 
  $headers.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
  
  
@@ -25,8 +27,8 @@ $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
  
 // Create email headers
-$headers .= 'From: Rahul VS<rahul@birdpause.com>'."\r\n".
-    'Reply-To: Rahul VS<rahul@birdpause.com>'."\r\n" .
+$headers .= 'From: BirdPause<contact@birdpause.com>'."\r\n".
+    'Reply-To: Bird Pause<contact@birdpause.com>'."\r\n" .
     'X-Mailer: PHP/' . phpversion();
  
 // Compose a simple HTML email message
@@ -35,15 +37,15 @@ $message1.= '<h1 style="color:#f40;">'.$message.'</h1>';
 $message1.= '<p style="color:#080;font-size:18px;">Thanks !</p>';
 $message1.= '</body></html>';
 	
-	mail("rahuljosevs85@gmail.com",$subject, $message1, $headers);
-	mail($email,"Query", "Thank you for registering", $headers);
+	mail("contact@birdpause.com",$subject, $message1, $headers);
+	mail($email,"Query", "Thank you for registering with Bird Pause You will be recieving a confirmation mail soon. Thank You!", $headers);
 	
-	//if(!empty($insert_id)) {
+	if(!empty($insert_id)) {
 	   $message = "Your contact information is saved successfully.";
 	   $type = "success";
-	//}
 }
-require_once "contact-view.php";
+}
+//require_once "contact-view.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,7 +121,7 @@ require_once "contact-view.php";
         <section class="centerpos">
         <div class="bg-img">
            <section class="contactform">
-            <form class="modal-content" action="contact_action.php">
+            <form class="modal-content" action="" method="post">
               <div class="contain">
                 <h1 class="formname">Contact us</h1>
                 <hr>
